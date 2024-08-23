@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkdcci"]=self["webpackChunkdcci"]||[]).push([[632],{8632:function(n,u,e){e.r(u),e.d(u,{default:function(){return i}});var r=e(6768);function a(n,u,e,a,c,t){return(0,r.uX)(),(0,r.CE)("div",null,"journalspage")}var c={name:"JournalsPage",setup(){}},t=e(1241);const s=(0,t.A)(c,[["render",a]]);var i=s}}]);
-//# sourceMappingURL=632.1fd20be0.js.map
