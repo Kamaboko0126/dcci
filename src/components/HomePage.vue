@@ -1,18 +1,18 @@
 <script>
-import { ref } from "vue";
+import BannerItem from "@/components/BannerItem.vue";
 
 export default {
   name: "HomePage",
+  components: {
+    BannerItem,
+  },
   setup() {
-    const bannerImg = ref(require("@/assets/banner2.jpg"));
-
     const scrollToIntro = () => {
       const introContent = document.getElementById("intro-content");
       introContent.scrollIntoView({ behavior: "smooth" });
     };
 
     return {
-      bannerImg,
       scrollToIntro,
     };
   },
@@ -21,11 +21,7 @@ export default {
 
 <template>
   <section class="banner-section">
-    <div class="marquee">
-      <div class="image">
-        <img class="marquee-content" v-for="n in 3" :key="n" :src="bannerImg" />
-      </div>
-    </div>
+    <BannerItem />
   </section>
   <section class="section-bg">
     <div class="scroll-content" @click="scrollToIntro">
@@ -57,32 +53,8 @@ section {
 
 .banner-section {
   min-height: 90vh;
-}
-
-.marquee {
-  position: relative;
   width: 100%;
-  height: 90vh;
-  .image {
-    display: flex;
-    height: 100%;
-    /* width: 200%; */
-    animation: marquee 300s linear infinite;
-    img {
-      height: 100%;
-    }
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      50% {
-        transform: translateX(-150%);
-      }
-      100% {
-        transform: translateX(0%);
-      }
-    }
-  }
+  overflow: hidden;
 }
 
 .section-bg {
@@ -169,9 +141,7 @@ section {
 
 .btn {
   margin-top: 60px;
-  h2 {
-    line-height: normal;
-  }
+  line-height: normal;
   &::after {
     content: "";
     display: block;

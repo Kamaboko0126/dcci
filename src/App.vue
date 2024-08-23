@@ -1,11 +1,21 @@
 <script>
 import FooterItem from "./components/DefaultItems/FooterItem.vue";
 import HeaderItem from "./components/DefaultItems/HeaderItem.vue";
+import { ref } from "vue";
+
 export default {
   name: "App",
   components: {
     HeaderItem,
     FooterItem,
+  },
+  setup() {
+    const journalsData = ref([
+      
+    ]);
+    return {
+      journalsData,
+    };
   },
 };
 </script>
@@ -47,7 +57,7 @@ h3 {
   unicode-bidi: isolate;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
